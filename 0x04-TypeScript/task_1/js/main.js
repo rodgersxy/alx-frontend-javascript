@@ -1,11 +1,15 @@
-// usage
-var director1 = {
-    firstName: 'John',
-    lastName: 'Doe',
-    fullTimeEmployee: true,
-    numberOfReports: 17,
-    location: 'Nairobi',
-    contract: false,
-    yearsOfExperience: 5
+var printTeacher = function (firstName, lastName) {
+    return firstName.charAt(0) + ". " + lastName;
 };
-console.log(director1);
+// usage
+// const director1: Directors = {
+//     firstName: 'John',
+//     lastName: 'Doe',
+//     fullTimeEmployee: true,
+//     numberOfReports: 17,
+//     location: 'Nairobi',
+//     contract: false,
+//     yearsOfExperience: 5,
+// };
+// console.log(director1);
+console.log(printTeacher('John', 'Doe'));
