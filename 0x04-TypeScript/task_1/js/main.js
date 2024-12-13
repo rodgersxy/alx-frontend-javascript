@@ -1,10 +1,11 @@
 // usage
-var teacher3 = {
+var director1 = {
     firstName: 'John',
     lastName: 'Doe',
-    fullTimeEmployee: false,
+    fullTimeEmployee: true,
+    numberOfReports: 17,
     location: 'Nairobi',
     contract: false,
     yearsOfExperience: 5
 };
-console.log(teacher3);
+console.log(director1);
