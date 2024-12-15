@@ -47,6 +47,16 @@ var director = createEmployee(1000);
 executeWork(director);
 var teacher = createEmployee(200);
 executeWork(teacher);
+function teachClass(todayClass) {
+    if (todayClass === 'Math') {
+        return 'Teaching Math';
+    }
+    else if (todayClass == 'History') {
+        return 'Teaching History';
+    }
+}
+console.log(teachClass('Math'));
+console.log(teachClass('History'));
 // Example usage
 // console.log(createEmployee(200) instanceof Teacher); 
 // console.log(createEmployee(1000) instanceof Director); 
