@@ -32,16 +32,31 @@ function createEmployee(salary) {
     }
     return new Director();
 }
-// Example usage
-console.log(createEmployee(200) instanceof Teacher); // true
-console.log(createEmployee(1000) instanceof Director); // true
-console.log(createEmployee("$500") instanceof Director); // true
-// Verifying the methods
-var teacher = createEmployee(200);
-console.log(teacher.workFromHome()); // Cannot work from home
-console.log(teacher.getCoffeeBreak()); // Cannot have a break
-console.log(teacher instanceof Teacher); // true
+function isDirector(employee) {
+    return employee instanceof Director;
+}
+function executeWork(employee) {
+    if (isDirector(employee)) {
+        console.log(employee.workDirectorTasks());
+    }
+    else {
+        console.log(employee.workTeacherTasks());
+    }
+}
 var director = createEmployee(1000);
-console.log(director.workFromHome()); // Working from home
-console.log(director.getCoffeeBreak()); // Getting a coffee break
-console.log(director instanceof Director); // true
+executeWork(director);
+var teacher = createEmployee(200);
+executeWork(teacher);
+// Example usage
+// console.log(createEmployee(200) instanceof Teacher); 
+// console.log(createEmployee(1000) instanceof Director); 
+// console.log(createEmployee("500") instanceof Director); 
+// // Verifying the methods
+// const teacher = createEmployee(200);
+// console.log(teacher.workFromHome()); 
+// console.log(teacher.getCoffeeBreak()); 
+// console.log(teacher instanceof Teacher); 
+// const director = createEmployee(1000);
+// console.log(director.workFromHome()); 
+// console.log(director.getCoffeeBreak()); 
+// console.log(director instanceof Director); // true

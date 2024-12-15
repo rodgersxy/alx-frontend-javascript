@@ -40,6 +40,28 @@ function createEmployee(salary: number | string): (Director | Teacher) {
     }
     return new Director();
 }
+
+type Employee = Director | Teacher;
+
+function isDirector(employee: Employee): employee is Director {
+    return employee instanceof Director;
+}
+
+function executeWork(employee: Employee) {
+    if (isDirector(employee)) {
+        console.log(employee.workDirectorTasks());
+    } else {
+        console.log(employee.workTeacherTasks());
+    }
+}
+
+const director = createEmployee(1000);
+executeWork(director);
+
+const teacher = createEmployee(200);
+executeWork(teacher);
+
+
 // Example usage
 // console.log(createEmployee(200) instanceof Teacher); 
 // console.log(createEmployee(1000) instanceof Director); 
